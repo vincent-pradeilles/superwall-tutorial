@@ -14,6 +14,8 @@ struct MovieDetailsView: View {
     
     @StateObject var viewModel: MovieDetailsViewModel
     
+    @State var showPlayer = false
+    
     init(movie: Movie) {
         self.movie = movie
         _viewModel = StateObject(
@@ -38,10 +40,13 @@ struct MovieDetailsView: View {
                     }
                                         
                     Button(action: {
-                        Superwall.shared.register(event: "campaign_trigger")
+                        Superwall.shared.register(event: "campaign_trigger", feature: {
+                            showPlayer = true
+                        })
                     }, label: {
                         Label("Watch", systemImage: "play.rectangle.fill")
                             .font(.callout)
+                            .fontWeight(.semibold)
                             .foregroundStyle(.white)
                             .padding()
                             .background(.tint)
@@ -76,6 +81,9 @@ struct MovieDetailsView: View {
         .task {
             await viewModel.fetchData()
         }
+        .sheet(isPresented: $showPlayer, content: {
+            MoviePlayerView()
+        })
     }
 }
 
