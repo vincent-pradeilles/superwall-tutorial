@@ -25,14 +25,29 @@ struct MovieDetailsView: View {
     var body: some View {
         List {
             Section {
-                AsyncImage(url: movie.posterURL) { image in
-                    image
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 120, height: 180)
-                } placeholder: {
-                    ProgressView()
-                        .frame(width: 120, height: 180)
+                HStack {
+                    AsyncImage(url: movie.posterURL) { image in
+                        image
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 120, height: 180)
+                    } placeholder: {
+                        ProgressView()
+                            .frame(width: 120, height: 180)
+                    }
+                                        
+                    Button(action: {
+                        // Show a paywall
+                    }, label: {
+                        Label("Watch", systemImage: "play.rectangle.fill")
+                            .font(.callout)
+                            .foregroundStyle(.white)
+                            .padding()
+                            .background(.tint)
+                            .clipShape(RoundedRectangle(cornerRadius: 16))
+                            .frame(maxWidth: .infinity)
+                    })
+                    .buttonStyle(.plain)
                 }
             }
             
