@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SuperwallKit
 
 struct MovieDetailsView: View {
     
@@ -37,7 +38,7 @@ struct MovieDetailsView: View {
                     }
                                         
                     Button(action: {
-                        // Show a paywall
+                        Superwall.shared.register(event: "campaign_trigger")
                     }, label: {
                         Label("Watch", systemImage: "play.rectangle.fill")
                             .font(.callout)

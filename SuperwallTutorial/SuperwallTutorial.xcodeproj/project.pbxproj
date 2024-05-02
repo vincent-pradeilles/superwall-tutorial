@@ -18,6 +18,7 @@
 		BF8CEA162BE28F99004B888B /* MoviesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8CEA0E2BE28F99004B888B /* MoviesViewModel.swift */; };
 		BF8CEA182BE29230004B888B /* MoviesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8CEA172BE29230004B888B /* MoviesView.swift */; };
 		BF8CEA1A2BE293FC004B888B /* MovieDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8CEA192BE293FC004B888B /* MovieDetailsView.swift */; };
+		BF8CEA1E2BE3C0EA004B888B /* SuperwallKit in Frameworks */ = {isa = PBXBuildFile; productRef = BF8CEA1D2BE3C0EA004B888B /* SuperwallKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF8CEA1E2BE3C0EA004B888B /* SuperwallKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,6 +122,9 @@
 			dependencies = (
 			);
 			name = SuperwallTutorial;
+			packageProductDependencies = (
+				BF8CEA1D2BE3C0EA004B888B /* SuperwallKit */,
+			);
 			productName = SuperwallTutorial;
 			productReference = BF8CE9F42BE28F84004B888B /* SuperwallTutorial.app */;
 			productType = "com.apple.product-type.application";
@@ -148,6 +153,9 @@
 				Base,
 			);
 			mainGroup = BF8CE9EB2BE28F84004B888B;
+			packageReferences = (
+				BF8CEA1C2BE3C0EA004B888B /* XCRemoteSwiftPackageReference "Superwall-iOS" */,
+			);
 			productRefGroup = BF8CE9F52BE28F84004B888B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -388,6 +396,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		BF8CEA1C2BE3C0EA004B888B /* XCRemoteSwiftPackageReference "Superwall-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/superwall/Superwall-iOS";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.6.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		BF8CEA1D2BE3C0EA004B888B /* SuperwallKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BF8CEA1C2BE3C0EA004B888B /* XCRemoteSwiftPackageReference "Superwall-iOS" */;
+			productName = SuperwallKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = BF8CE9EC2BE28F84004B888B /* Project object */;
 }

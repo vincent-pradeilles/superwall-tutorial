@@ -6,9 +6,15 @@
 //
 
 import SwiftUI
+import SuperwallKit
 
 @main
 struct SuperwallTutorialApp: App {
+    
+    init() {
+        Superwall.configure(apiKey: "pk_db90e0f33e1ae65e76cdef8aca86c340d2bfdccd35f6cb39")
+    }
+    
     var body: some Scene {
         WindowGroup {
             NavigationStack {
