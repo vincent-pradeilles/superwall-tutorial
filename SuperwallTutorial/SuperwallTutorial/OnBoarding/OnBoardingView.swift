@@ -21,7 +21,7 @@ struct OnBoardingView: View {
             
             Button(action: {
                 Superwall.shared.setUserAttributes(
-                    ["watch.preference": "by.myself"]
+                    ["watchPreference": "byMyself"]
                 )
                 hasNeverSeenOnboarding = false
             },
@@ -38,7 +38,7 @@ struct OnBoardingView: View {
             
             Button(action: {
                 Superwall.shared.setUserAttributes(
-                    ["watch.preference": "with.family"]
+                    ["watchPreference": "withFamily"]
                 )
                 
                 hasNeverSeenOnboarding = false
